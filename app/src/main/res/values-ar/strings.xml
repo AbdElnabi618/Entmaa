@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">إنتماء</string>
+    <string name="userName">اسم المستخدم</string>
+    <string name="password">كلمة المرور</string>
+    <string name="loading">جاري التحميل</string>
+    <string name="forgetPassword">هل نسيت كلمة المرور؟</string>
+    <string name="noAccount">ليس لدي حساب؟</string>
+    <string name="newAccount">حساب جديد</string>
+</resources>

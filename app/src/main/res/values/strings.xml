@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Entmaan</string>
+    <string name="userName">user name</string>
+    <string name="password">password</string>
+    <string name="loading">loading</string>
+    <string name="forgetPassword">Did you forget password?</string>
+    <string name="noAccount">you haven\'t account?</string>
+    <string name="newAccount">new account</string>
+</resources>
