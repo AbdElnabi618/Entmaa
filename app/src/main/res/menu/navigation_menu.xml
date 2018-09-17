@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:title="@string/home_item"
+            android:icon="@mipmap/home"
+            android:id="@+id/home_item"/>
+        <item
+            android:title="@string/packages_item"
+            android:icon="@mipmap/gifts"
+            android:id="@+id/packages_item"/>
+        <item
+            android:title="@string/ask_member_item"
+            android:icon="@mipmap/consult_members"
+            android:id="@+id/askMember_item"/>
+        <item
+            android:title="@string/notification_item"
+            android:icon="@mipmap/notifications"
+            android:id="@+id/notification_item"/>
+        <item
+            android:title="@string/bankAccount"
+            android:icon="@mipmap/bank_icon"
+            android:id="@+id/banks_item"/>
+        <item
+            android:title="@string/Setting"
+            android:icon="@drawable/setting"
+            android:id="@+id/setting_item"/>
+        <item
+            android:title="@string/who_us_item"
+            android:icon="@drawable/about_us"
+            android:id="@+id/whoUs_item"/>
+        <item
+            android:title="@string/contact_with_us_item"
+            android:icon="@mipmap/contactus"
+            android:id="@+id/contact_item"/>
+        <item
+            android:title="@string/logout_item"
+            android:icon="@mipmap/exit"
+            android:id="@+id/logout_item"/>
+
+
+    </group>
+
+</menu>

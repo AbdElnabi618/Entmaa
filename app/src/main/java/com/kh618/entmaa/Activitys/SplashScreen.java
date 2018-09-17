@@ -1,16 +1,13 @@
-package com.kh618.entmaa;
+package com.kh618.entmaa.Activitys;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 import com.jaeger.library.StatusBarUtil;
+import com.kh618.entmaa.R;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -46,4 +43,9 @@ public class SplashScreen extends AppCompatActivity {
         }
     };
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        finish();
+    }
 }

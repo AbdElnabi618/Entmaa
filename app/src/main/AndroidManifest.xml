@@ -9,14 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Activitys.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Activitys.Login" />
+        <activity android:name=".Activitys.Register" />
+        <activity android:name=".Activitys.Home" />
+        <activity android:name=".RestaurantClasses.Restaurants" />
+        <activity android:name=".Activitys.Test" />
+        <activity android:name=".RestaurantClasses.RestaurantDeitales" />
+        <activity android:name=".Activitys.ContectUs" />
+        <activity android:name=".Activitys.WhoUs" />
+        <activity android:name=".Activitys.Setting" />
+        <activity android:name=".Activitys.BankAccounts" />
+        <activity android:name=".Activitys.Packages" />
+        <activity android:name=".Activitys.Check" />
+        <activity android:name=".Activitys.BillDiscount" />
+        <activity android:name=".Activitys.Rate" />
+        <activity android:name=".Activitys.AskQuiz"></activity>
     </application>
 
 </manifest>

@@ -4,6 +4,81 @@
     <string name="password">password</string>
     <string name="loading">loading</string>
     <string name="forgetPassword">Did you forget password?</string>
+    <string name="login">Login</string>
     <string name="noAccount">you haven\'t account?</string>
     <string name="newAccount">new account</string>
+
+    <string name="mobile">mobile number</string>
+    <string name="email">Email</string>
+    <string name="nakedName">Naked name</string>
+    <string name="companyName">Company name</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="haveAccount">I\'m having account?</string>
+    <string name="details">details</string>
+    <string name="send">send</string>
+
+    <string name="health">Health and beauty</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="shops">Shops</string>
+    <string name="hotels">Hotels</string>
+    <string name="search">Search</string>
+
+    <!--Navigation string-->
+    <string name="headerText">restaurant name</string>
+    <string name="home_item">Home</string>
+    <string name="packages_item">Packages</string>
+    <string name="ask_member_item">Ask members</string>
+    <string name="notification_item">Notification</string>
+    <string name="Setting">Settings</string>
+    <string name="who_us_item">Who us</string>
+    <string name="contact_with_us_item">Contact with us</string>
+    <string name="logout_item">Logout</string>
+
+    <!--Restaurants names-->
+    <string name="elSabahy">El Sabhy Restaurant</string>
+    <string name="elMohamady">El Mohamady Restaurant</string>
+    <string name="frenshFraiz">Frensh fraize Restaurant</string>
+    <string name="mrFish">Mr fish Restaurant</string>
+
+    <string name="offer">Discount up to 50%</string>
+    <string name="autoText">t is a long established fact that a reader will be distracted by the readable
+        content of a page when looking at its layout. The point of using Lorem Ipsum is
+        that it has a more-or-less normal distribution of letters, as opposed to using
+        \'Content here, content here\', making it look like readable English.  </string>
+    <string name="offerHereNow">Now offer</string>
+    <string name="offerDate">from 3/9/2018 to 4/9/2018</string>
+
+    <string name="terms">Terms and Conditions</string>
+
+    <string name="save">save</string>
+    <string name="bankAccount">Bank Accounts</string>
+    <string name="bank_Alahly">Al Ahly\'s Bank </string>
+    <string name="ragahy_bank">Eragahy\'s bank</string>
+
+    <string name="packagePrice">Package price</string>
+
+    <string name="monthlyPackage">Monthly package</string>
+    <string name="halfYearPackage">Half-year package</string>
+    <string name="YearPackage">Yearly package</string>
+    <string name="chosePackage">chose your package</string>
+    <string name="choseText">please chose best package to you</string>
+
+    <string name="bill">Bill</string>
+    <string name="enterBill">Enter the bill value</string>
+    <string name="readCode">Scan code</string>
+
+    <string name="billAfterDis">bill after discount</string>
+    <string name="billBeforeDis">bill before discount</string>
+    <string name="done">Done</string>
+    <string name="dontDone">not done</string>
+
+    <string name="addRate">Rating</string>
+    <string name="addComment">add comment ..</string>
+    <string name="good">Good</string>
+    <string name="bad">Bad</string>
+    <string name="excellent">Excellent</string>
+
+    <string name="addQuiz">Add a Question</string>
+
 </resources>

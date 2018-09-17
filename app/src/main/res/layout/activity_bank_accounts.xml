@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_banks">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RestaurantClasses.Restaurants">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="@mipmap/header"
+            >
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/drawer_icon"
+                android:src="@mipmap/menue"
+                android:layout_marginTop="22dp"
+                android:layout_marginStart="22dp"
+                android:onClick="openDrawer"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bankAccount"
+                android:layout_centerInParent="true"
+                android:textSize="16sp"/>
+            <ImageView
+                android:id="@+id/backrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/arrow2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="backRow"/>
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:id="@+id/bank_recycle"
+            android:layout_below="@id/toolbar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/bank_recycle"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:id="@+id/layout_photoUpload"
+            android:onClick="pickUpPhoto">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/upload_photo"
+                android:scaleType="fitXY"
+                android:id="@+id/img_photoUpload"
+                />
+            <TextView
+                android:id="@+id/text_photoUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPLOAD PHOTO"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
+                android:layout_marginStart="140dp"
+                android:layout_marginTop="120dp"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            android:background="@mipmap/button2"
+            android:layout_below="@id/layout_photoUpload"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="22dp"
+            android:onClick="Send"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/navigation_banks"
+        android:layout_gravity="start"
+        app:menu="@menu/navigation_menu"
+        android:background="@mipmap/sidebar"
+        app:headerLayout="@layout/navigation_header"
+        />
+
+</android.support.v4.widget.DrawerLayout>
+

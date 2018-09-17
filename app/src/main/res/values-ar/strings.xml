@@ -4,6 +4,77 @@
     <string name="password">كلمة المرور</string>
     <string name="loading">جاري التحميل</string>
     <string name="forgetPassword">هل نسيت كلمة المرور؟</string>
+    <string name="login">دخول</string>
     <string name="noAccount">ليس لدي حساب؟</string>
     <string name="newAccount">حساب جديد</string>
+    <string name="details">التفاصيل</string>
+    <string name="send">ارسال</string>
+
+    <string name="mobile">رقم الجوال</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="nakedName">الاسم الشائع</string>
+    <string name="companyName">الشركة التابع لها</string>
+    <string name="confirmPassword">تاكيد كلمة المرور</string>
+    <string name="register">تسجيل</string>
+    <string name="haveAccount">يوجد لدي حساب</string>
+
+    <string name="health">الصحه والجمال</string>
+    <string name="restaurants">المطاعم</string>
+    <string name="shops">المحلات</string>
+    <string name="hotels">الفنادق</string>
+    <string name="search">ابحث هنا\.\.\.</string>
+
+    <!--Navigation string-->
+    <string name="headerText">اسم المطعم</string>
+    <string name="home_item">الرئسية</string>
+    <string name="packages_item">الباقات</string>
+    <string name="ask_member_item">اسال الاعضاء</string>
+    <string name="notification_item">الاشعارات</string>
+    <string name="Setting">الاعدادات</string>
+    <string name="who_us_item">من نحن</string>
+    <string name="contact_with_us_item">اتصل بنا</string>
+    <string name="logout_item">خروج</string>
+
+    <!--Restaurants names-->
+    <string name="elSabahy">مطعم الصبحي</string>
+    <string name="elMohamady">مطعم المحمدي</string>
+    <string name="frenshFraiz">مطعم فرينش فرايز</string>
+    <string name="mrFish">مطعم مستر فيش</string>
+
+    <string name="autoText">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص
+        هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
+        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى </string>
+
+    <string name="offerHereNow">العروض المتاحه حاليا</string>
+    <string name="offerDate">من 3/9/2018 الي 4/9/2018</string>
+
+    <string name="terms">الشروط والاحكام</string>
+
+    <string name="save">حفظ</string>
+    <string name="bankAccount">الحسابات البنكية</string>
+    <string name="bank_Alahly">البنك الاهلي</string>
+    <string name="ragahy_bank">مصرف الراجحي</string>
+
+    <string name="packagePrice">اسعار الباقات</string>
+    <string name="monthlyPackage">الباقه الشهرية</string>
+    <string name="halfYearPackage">الباقه النصف سنوية</string>
+    <string name="YearPackage">الباقه السنوية</string>
+    <string name="chosePackage">اختار باقتك</string>
+    <string name="choseText">من فضلك يرجي اختيار الباقه المناسبه لك لاستكمال عملية الدفع</string>
+
+    <string name="bill">الفاتورة</string>
+    <string name="enterBill">ادخل قيمة الفاتوره</string>
+    <string name="readCode">امسح الكود</string>
+
+    <string name="billAfterDis">الفاتورة بعد الخصم</string>
+    <string name="billBeforeDis">الفاتورة قبل الخصم</string>
+    <string name="done">تم</string>
+    <string name="dontDone">لم يتم</string>
+
+    <string name="addRate">اضافة تقييم</string>
+    <string name="addComment">اضافة تعليق ..</string>
+    <string name="good">جيد</string>
+    <string name="bad">سئ</string>
+    <string name="excellent">ممتاز</string>
+
 </resources>

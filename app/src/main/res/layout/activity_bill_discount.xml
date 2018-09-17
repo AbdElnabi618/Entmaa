@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_discount"
+    android:background="@mipmap/bg_bill">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/drawer_icon"
+                android:src="@mipmap/menue"
+                android:layout_marginTop="22dp"
+                android:layout_marginStart="22dp"
+                android:onClick="openDrawer"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/drawer_icon"
+                android:layout_centerHorizontal="true"
+                android:text="@string/billAfterDis"
+                android:textSize="16sp" />
+            <ImageView
+                android:id="@+id/backrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/arrow2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="backRow"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="81dp"
+            android:src="@mipmap/invoice_after_deduction"
+            android:id="@+id/bill_image1"/>
+        <TextView
+            android:id="@+id/beforeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/billBeforeDis"
+            android:layout_below="@id/bill_image1"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="40dp"
+            android:textSize="16sp"/>
+
+
+        <LinearLayout
+            android:id="@+id/layout_before"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/beforeText"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="#8396b1"
+            android:paddingBottom="22dp"
+            android:paddingEnd="22dp"
+            android:paddingStart="22dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:hint="@string/enterBill"
+                android:textColorHint="#fff"
+                android:id="@+id/beforeDiscount_et"
+                android:textColor="#fff"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/afterText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/billAfterDis"
+            android:layout_below="@id/layout_before"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="40dp"
+            android:textSize="16sp"/>
+
+        <LinearLayout
+            android:id="@+id/layout_after"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/afterText"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="#8396b1"
+            android:paddingBottom="22dp"
+            android:paddingEnd="22dp"
+            android:paddingStart="22dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:hint="@string/enterBill"
+                android:textColorHint="#fff"
+                android:id="@+id/afterDiscount_et"
+                android:textColor="#fff"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_after"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/done"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/notDone"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_after"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/dontDone"
+            android:textColor="#000" />
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/navigation_discount"
+        android:layout_gravity="start"
+        app:menu="@menu/navigation_menu"
+        android:background="@mipmap/sidebar"
+        app:headerLayout="@layout/navigation_header"
+        />
+
+</android.support.v4.widget.DrawerLayout>
+
+
+

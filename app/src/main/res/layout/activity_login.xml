@@ -1,112 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
     android:background="@mipmap/splash2"
-    android:orientation="vertical">
-    <!--Logo image view-->
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="77dp"
-        android:src="@mipmap/logo" />
+    >
 
-    <!--UserName-->
-    <LinearLayout
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="250dp"
-        android:layout_marginStart="50dp">
+        tools:context=".Activitys.Login">
+        <!--Logo image view-->
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="84dp"
+            android:layout_marginTop="77dp"
+            android:src="@mipmap/logo"
+            app:layout_constraintBottom_toTopOf="@+id/editText5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--UserName-->
+
         <!--User name image view-->
         <ImageView
+            android:id="@+id/imageView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
             android:src="@mipmap/username"
-            android:layout_gravity="center"
-            android:layout_marginEnd="15dp"/>
+            app:layout_constraintEnd_toStartOf="@+id/editText5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editText5" />
 
         <!--User name EditText-->
+
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/editText5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/editText6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7">
+
+
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/userName"
-                android:inputType="textPersonName"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/userName"
+            android:inputType="textPersonName" />
         </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
 
-    <!--password-->
-    <LinearLayout
-        android:id="@+id/passwordLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="320dp"
-        android:layout_marginStart="50dp">
+        <!--password-->
+
         <!--Password image view-->
         <ImageView
+            android:id="@+id/imageView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginEnd="15dp"
-            android:src="@mipmap/password" />
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/password"
+            app:layout_constraintEnd_toStartOf="@+id/editText6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editText6" />
 
         <!--Password EditText-->
-        <android.support.design.widget.TextInputLayout
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/editText6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toBottomOf="@+id/editText5" >
+
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="15dp"
-                android:hint="@string/password"
-                android:inputType="textPassword" />
-        </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
-    <!--forget password textView-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/forgetPassword"
-        android:layout_alignTop="@+id/passwordLayout"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="12dp"/>
-
-    <!--no account textView-->
-    <TextView
-        android:id="@+id/noAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="47dp"
-        android:layout_marginStart="99dp"
-        android:text="@string/noAccount" />
-
-    <!--new account textView-->
-    <TextView
-        android:layout_marginStart="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/noAccount"
-        android:layout_toEndOf="@+id/noAccount"
-        android:text="@string/newAccount"
-        android:textStyle="bold"/>
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:layout_marginStart="0dp"/>
+    </android.support.design.widget.TextInputLayout>
 
 
+        <!--forget password textView-->
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="170dp"
+            android:layout_marginEnd="11dp"
+            android:text="@string/forgetPassword"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText6"
+            android:onClick="ForgetPassword"/>
 
-</RelativeLayout>
+        <!--no account textView-->
+        <TextView
+            android:id="@+id/noAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="7dp"
+            android:text="@string/noAccount"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
+            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="NewAccount"/>
+
+        <!--new account textView-->
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/newAccount"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/noAccount"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            android:onClick="NewAccount"/>
+
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="162dp"
+            android:layout_marginStart="161dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/login"
+            app:layout_constraintBottom_toBottomOf="@+id/noAccount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            android:onClick="Login"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
