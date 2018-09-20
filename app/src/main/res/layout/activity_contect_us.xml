@@ -173,7 +173,7 @@
                     android:layout_alignTop="@id/layout_details"
                     android:layout_marginTop="110dp"
                     android:text="@string/send"
-                    android:background="@mipmap/button2"
+                    android:background="@drawable/button"
                     android:layout_marginBottom="16dp"
                     />
             </RelativeLayout>

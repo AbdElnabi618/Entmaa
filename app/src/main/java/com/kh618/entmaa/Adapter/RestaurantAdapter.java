@@ -1,4 +1,4 @@
-package com.kh618.entmaa.Adabter;
+package com.kh618.entmaa.Adapter;
 
 import android.content.Context;
 import android.content.Intent;

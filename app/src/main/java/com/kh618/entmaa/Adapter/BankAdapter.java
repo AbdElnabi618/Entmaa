@@ -1,4 +1,4 @@
-package com.kh618.entmaa.Adabter;
+package com.kh618.entmaa.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -13,12 +13,12 @@ import com.kh618.entmaa.R;
 
 import java.util.ArrayList;
 
-public class BankAdabter extends RecyclerView.Adapter<BankAdabter.BankHolder> {
+public class BankAdapter extends RecyclerView.Adapter<BankAdapter.BankHolder> {
 
     private Context context;
     private ArrayList<BankItem> list;
 
-    public BankAdabter(Context context, ArrayList<BankItem> list) {
+    public BankAdapter(Context context, ArrayList<BankItem> list) {
         this.context = context;
         this.list = list;
     }

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.kh618.entmaa.MyClasses.MyNavigation;
@@ -22,6 +23,8 @@ public class Setting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         ImageView backRow = findViewById(R.id.backrow);
+        /// to make a responsive layout when keyboard appear
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         String local = Locale.getDefault().toString();
         if(local.equals("ar_EG") || local.equals("ar"))

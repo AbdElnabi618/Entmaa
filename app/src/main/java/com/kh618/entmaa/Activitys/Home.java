@@ -1,6 +1,7 @@
 package com.kh618.entmaa.Activitys;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -9,11 +10,14 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
-import com.kh618.entmaa.Adabter.RecycleAdapter;
+import com.kh618.entmaa.Adapter.HomeAdapter;
 import com.kh618.entmaa.MyClasses.ListItem;
 import com.kh618.entmaa.MyClasses.MyNavigation;
 import com.kh618.entmaa.R;
@@ -29,20 +33,27 @@ public class Home extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ArrayList<ListItem> arrayList;
-    RecycleAdapter adapter;
+    HomeAdapter adapter;
     private final int columnsNum = 2;
 
     ArrayList<Integer> imagesSlider;
+
+    TextView recycleCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
 
         mDrawerLayout = findViewById(R.id.drawer_home);
         navigationView = findViewById(R.id.navigation_home);
         new MyNavigation(this, mDrawerLayout, navigationView);
 
+        recycleCount= findViewById(R.id.recycle_itemCount);
         recyclerView = findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(new GridLayoutManager(this, columnsNum));
 
@@ -54,9 +65,12 @@ public class Home extends AppCompatActivity {
             arrayList.add(new ListItem(R.mipmap.hotels, getResources().getString(R.string.hotels)));
         }
 
-        adapter = new RecycleAdapter(this, arrayList);
+        adapter = new HomeAdapter(this, arrayList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
+
+        recycleCount.setText(getResources().getString(R.string.firstWord_numItem)+" "+String.valueOf(adapter.getItemCount())+" "+
+                getResources().getString(R.string.secondWord_numItem));
 
         imagesSlider = new ArrayList<>();
         for (int i = 0; i < 4; i++)

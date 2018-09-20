@@ -1,4 +1,4 @@
-package com.kh618.entmaa.Adabter;
+package com.kh618.entmaa.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -15,11 +15,11 @@ import com.kh618.entmaa.R;
 
 import java.util.ArrayList;
 
-public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.Holder> {
+public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.Holder> {
     private Context context;
     private ArrayList<ListItem> listItems ;
 
-    public RecycleAdapter(Context context, ArrayList<ListItem> listItems) {
+    public HomeAdapter(Context context, ArrayList<ListItem> listItems) {
         this.context = context;
         this.listItems = listItems;
     }
@@ -27,7 +27,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.Holder> 
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater= LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.recycle_list,parent,false);
+        View v = inflater.inflate(R.layout.home_list,parent,false);
 
         return new Holder(v);
     }

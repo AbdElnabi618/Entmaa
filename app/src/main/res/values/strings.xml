@@ -23,6 +23,8 @@
     <string name="shops">Shops</string>
     <string name="hotels">Hotels</string>
     <string name="search">Search</string>
+    <string name="firstWord_numItem">Found</string>
+    <string name="secondWord_numItem">items</string>
 
     <!--Navigation string-->
     <string name="headerText">restaurant name</string>
@@ -41,6 +43,7 @@
     <string name="frenshFraiz">Frensh fraize Restaurant</string>
     <string name="mrFish">Mr fish Restaurant</string>
 
+    <string name="restaurantDetails">Restaurant Details</string>
     <string name="offer">Discount up to 50%</string>
     <string name="autoText">t is a long established fact that a reader will be distracted by the readable
         content of a page when looking at its layout. The point of using Lorem Ipsum is
@@ -79,6 +82,16 @@
     <string name="bad">Bad</string>
     <string name="excellent">Excellent</string>
 
+    <string name="questions">The Questions</string>
+    <string name="quite1">Hello , Where is Sabhay restaurant?</string>
     <string name="addQuiz">Add a Question</string>
+
+    <string name="replies">Replies</string>
+    <string name="answer1">in London</string>
+    <string name="answer2">in America</string>
+
+    <string name="notification">Notifications</string>
+    <string name="userName_notifi">By Admin</string>
+    <string name="notification_content">you must registering in the application</string>
 
 </resources>

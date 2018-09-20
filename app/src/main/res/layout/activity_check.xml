@@ -88,7 +88,8 @@
             android:layout_marginEnd="60dp"
             android:text="@string/readCode"
             android:textColor="#000"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:onClick="openIntent"/>
 
     </RelativeLayout>
 

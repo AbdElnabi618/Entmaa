@@ -6,171 +6,194 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/drawer_detailes">
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!--toolbar-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/toolbar"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:background="@mipmap/header">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:id="@+id/drawer_icon"
-                android:src="@mipmap/menue"
-                android:layout_marginTop="22dp"
-                android:layout_marginStart="22dp"
-                android:onClick="openDrawer"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/restaurants"
-                android:layout_centerInParent="true"
-                android:textSize="16sp"/>
-            <ImageView
-                android:id="@+id/backrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@mipmap/arrow2"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="16dp"
-                android:onClick="backRow"/>
-        </RelativeLayout>
-        <!--Images-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_below="@+id/toolbar"
-            android:id="@+id/images">
 
-            <ImageView
-                android:id="@+id/detiels_Image"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                android:src="@mipmap/bg_resturants" />
-
-            <LinearLayout
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--toolbar-->
+            <RelativeLayout
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_below="@id/detiels_Image"
-                android:orientation="horizontal">
+                android:layout_alignParentTop="true"
+                android:background="@mipmap/header">
 
                 <ImageView
-                    android:layout_width="95dp"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/resturants1" />
+                    android:id="@+id/drawer_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="22dp"
+                    android:onClick="openDrawer"
+                    android:src="@mipmap/menue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/restaurants"
+                    android:textSize="16sp" />
 
                 <ImageView
-                    android:layout_width="95dp"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/resturants2" />
+                    android:id="@+id/backrow"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="22dp"
+                    android:onClick="backRow"
+                    android:src="@mipmap/arrow2" />
+            </RelativeLayout>
+            <!--Images-->
+            <RelativeLayout
+                android:id="@+id/images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar"
+                android:layout_margin="16dp">
 
                 <ImageView
-                    android:layout_width="95dp"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/resturants3" />
+                    android:id="@+id/detiels_Image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/bg_resturants" />
 
-                <ImageView
-                    android:layout_width="95dp"
-                    android:layout_height="100dp"
-                    android:background="@color/colorPrimaryDark" />
-            </LinearLayout>
 
+
+                    <ImageView
+                        android:id="@+id/image1"
+                        android:layout_width="95dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/resturants1"
+                        android:layout_below="@id/detiels_Image"
+                        />
+
+                    <ImageView
+                        android:id="@+id/image2"
+                        android:layout_width="95dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/resturants2"
+                        android:layout_below="@id/detiels_Image"
+                        android:layout_alignStart="@id/image1"
+                        android:layout_marginStart="95dp"/>
+
+                    <ImageView
+                        android:id="@+id/image3"
+                        android:layout_width="95dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/resturants3"
+                        android:layout_below="@id/detiels_Image"
+                        android:layout_alignStart="@id/image2"
+                        android:layout_marginStart="95dp"  />
+
+                    <ImageView
+                        android:id="@+id/image4"
+                        android:layout_width="95dp"
+                        android:layout_height="100dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_below="@id/detiels_Image"
+                        android:layout_alignStart="@id/image3"
+                        android:layout_marginStart="95dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/image4"
+                    android:layout_alignEnd="@id/image4"
+                    android:layout_marginBottom="43dp"
+                    android:layout_marginEnd="26sp"
+                    android:text="5 صور" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/restaurantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/images"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="-60dp"
+                android:layout_marginStart="23dp"
+                android:text="@string/elMohamady"
+                android:textColor="@color/gruyBlue"
+                android:textSize="22sp" />
+
+            <View
+                android:id="@+id/shadow1"
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/restaurantName"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/gruyBlue" />
+
+            <TextView
+                android:id="@+id/information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@id/shadow1"
+                android:layout_marginEnd="22dp"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="22dp"
+                android:text="@string/autoText"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/newOffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/information"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="-60dp"
+                android:layout_marginStart="23dp"
+                android:text="@string/offerHereNow"
+                android:textColor="@color/gruyBlue"
+                android:textSize="22sp" />
+
+            <View
+                android:id="@+id/shadow2"
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@id/newOffer"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/gruyBlue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@id/shadow2"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="22dp"
+                android:text="@string/offerDate"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@mipmap/barcode" />
 
         </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignBottom="@id/images"
-            android:layout_marginStart="23dp"
-            android:layout_marginBottom="-60dp"
-            android:text="@string/elMohamady"
-            android:textColor="@color/gruyBlue"
-            android:textSize="22sp"
-            android:id="@+id/restaurantName"
-            />
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="3dp"
-            android:layout_alignTop="@+id/restaurantName"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="23dp"
-            android:background="@color/gruyBlue"
-            android:id="@+id/shadow1"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/shadow1"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="22dp"
-            android:layout_marginStart="23dp"
-            android:text="@string/autoText"
-            android:textColor="@color/colorPrimaryDark"
-            android:id="@+id/information"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="22dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/information"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="-60dp"
-            android:text="@string/offerHereNow"
-            android:textColor="@color/gruyBlue"
-            android:textSize="22sp"
-            android:layout_marginStart="23dp"
-            android:id="@+id/newOffer"
-            />
-        <View
-            android:layout_width="100dp"
-            android:layout_height="3dp"
-            android:layout_alignTop="@id/newOffer"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="23dp"
-            android:background="@color/gruyBlue"
-            android:id="@+id/shadow2"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@id/shadow2"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="22dp"
-            android:text="@string/offerDate"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp"
-            android:layout_marginStart="23dp"/>
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/barcode"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="16dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="16dp"/>
-
-    </RelativeLayout>
+    </ScrollView>
 
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"

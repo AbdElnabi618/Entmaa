@@ -23,6 +23,8 @@
     <string name="shops">المحلات</string>
     <string name="hotels">الفنادق</string>
     <string name="search">ابحث هنا\.\.\.</string>
+    <string name="firstWord_numItem">يوجد </string>
+    <string name="secondWord_numItem"> عنصر</string>
 
     <!--Navigation string-->
     <string name="headerText">اسم المطعم</string>
@@ -41,6 +43,7 @@
     <string name="frenshFraiz">مطعم فرينش فرايز</string>
     <string name="mrFish">مطعم مستر فيش</string>
 
+    <string name="restaurantDetails">تفاصيل المطعم</string>
     <string name="autoText">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص
         هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى </string>
@@ -76,5 +79,17 @@
     <string name="good">جيد</string>
     <string name="bad">سئ</string>
     <string name="excellent">ممتاز</string>
+
+    <string name="questions">الاسئله</string>
+    <string name="quite1">السلام عليكم : اين اجد مطعم الصباحي؟</string>
+    <string name="addQuiz">اضافة سؤال</string>
+
+    <string name="replies">الردود</string>
+    <string name="answer1">في لندن</string>
+    <string name="answer2">في امريكا</string>
+
+    <string name="notification">الاشعارات</string>
+    <string name="userName_notifi">بواسطة الادمن</string>
+    <string name="notification_content">يجب عليك التسجيل في التطبيق للاستفاده من العروض</string>
 
 </resources>

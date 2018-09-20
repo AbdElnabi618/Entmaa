@@ -2,8 +2,9 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#5a7392</color>
-    <color name="colorAccent">#FDFEFE</color>
+    <color name="colorAccent">#9aa4b1</color>
     <color name="hintColor">#9aa4b1</color>
     <color name="gruyBlue">#6699CC</color>
     <color name="test">#3dd000</color>
+    <color name="GreyTransparent">#B399a7b8</color>
 </resources>

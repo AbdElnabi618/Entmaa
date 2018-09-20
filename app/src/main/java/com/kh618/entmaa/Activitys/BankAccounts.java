@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,18 +13,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.BaseAdapter;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kh618.entmaa.Adabter.BankAdabter;
+import com.kh618.entmaa.Adapter.BankAdapter;
 import com.kh618.entmaa.MyClasses.BankItem;
 import com.kh618.entmaa.MyClasses.MyNavigation;
 import com.kh618.entmaa.R;
 
 import java.io.InputStream;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -38,6 +39,10 @@ public class BankAccounts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_accounts);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
 
         ImageView backRow = findViewById(R.id.backrow);
         uploadPhoto = findViewById(R.id.img_photoUpload);
@@ -61,7 +66,7 @@ public class BankAccounts extends AppCompatActivity {
         list.add(new BankItem(R.mipmap.bg_bank2,getResources().getString(R.string.ragahy_bank)
                 ,"1112 2223 5556 4445",R.mipmap.bank_logo));
 
-        BankAdabter adapter = new BankAdabter(this,list);
+        BankAdapter adapter = new BankAdapter(this,list);
 
         RecyclerView recyclerView = findViewById(R.id.bank_recycle);
 
@@ -89,6 +94,8 @@ public class BankAccounts extends AppCompatActivity {
     public void Send(View v){
         uploadText.setVisibility(View.VISIBLE);
         uploadPhoto.setImageResource(R.mipmap.upload_photo);
+        Intent i = new Intent(BankAccounts.this,Check.class);
+        startActivity(i);
     }
 
     @Override

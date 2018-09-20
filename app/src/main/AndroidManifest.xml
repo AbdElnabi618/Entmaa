@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.kh618.entmaa">
 
     <application
@@ -30,7 +31,13 @@
         <activity android:name=".Activitys.Check" />
         <activity android:name=".Activitys.BillDiscount" />
         <activity android:name=".Activitys.Rate" />
-        <activity android:name=".Activitys.AskQuiz"></activity>
+        <activity android:name=".Activitys.AskQuiz" />
+        <activity android:name=".Activitys.TheQuestions" />
+        <activity android:name=".Activitys.Replies"
+            tools:ignore="ExtraText">
+            android:windowSoftInputMode="stateVisible|adjustResize"
+        </activity>
+        <activity android:name=".Activitys.Notifications"></activity>
     </application>
 
 </manifest>

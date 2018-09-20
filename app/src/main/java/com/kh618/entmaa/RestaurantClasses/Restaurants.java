@@ -1,18 +1,16 @@
 package com.kh618.entmaa.RestaurantClasses;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.kh618.entmaa.Adabter.RestaurantAdapter;
+import com.kh618.entmaa.Adapter.RestaurantAdapter;
 import com.kh618.entmaa.MyClasses.MyNavigation;
 import com.kh618.entmaa.R;
 

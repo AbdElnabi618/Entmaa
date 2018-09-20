@@ -6,18 +6,67 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mydrawer">
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
-        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="hello"
-            android:textSize="22sp"
-            android:textColor="@color/colorPrimary"
-            android:gravity="center"
-            android:layout_centerInParent="true"
-            android:id="@+id/local"
-            />
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@mipmap/bg_bill"
+                    android:scaleType="fitXY"
+                    android:id="@+id/gray"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@android:color/holo_red_dark"
+                    android:layout_below="@+id/gray"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@android:color/white"
+                    android:layout_below="@+id/gray"
+                    android:layout_marginTop="150dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@android:color/holo_blue_bright"
+                    android:layout_below="@+id/gray"
+                    android:layout_marginTop="300dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@android:color/holo_red_dark"
+                    android:layout_below="@+id/gray"
+                    android:layout_marginTop="450dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@android:color/holo_red_dark"
+                    android:layout_below="@+id/gray"
+                    android:layout_marginTop="600dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@android:color/holo_red_dark"
+                    android:layout_below="@+id/gray"
+                    android:layout_marginTop="750dp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@android:color/holo_red_dark"
+                    android:layout_below="@+id/gray"
+                    android:layout_marginTop="900dp"/>
+            </RelativeLayout>
+
+        </ScrollView>
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView

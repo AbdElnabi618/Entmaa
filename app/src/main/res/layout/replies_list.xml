@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="66dp"
+    android:background="@android:color/transparent">
+    <View
+        android:layout_width="2dp"
+        android:layout_height="25dp"
+        android:background="@android:color/darker_gray"
+        android:id="@+id/Line1"
+        android:layout_marginStart="23dp"/>
+   <ImageView
+       android:id="@+id/circleImage"
+       android:layout_width="16dp"
+       android:layout_height="16dp"
+       android:background="@mipmap/circle"
+       android:layout_below="@id/Line1"
+       android:layout_marginStart="16dp"
+       tools:ignore="ContentDescription" />
+    <View
+        android:layout_width="2dp"
+        android:layout_height="25dp"
+        android:background="@android:color/darker_gray"
+        android:id="@+id/Line2"
+        android:layout_marginStart="23dp"
+        android:layout_below="@+id/circleImage"/>
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quite1"
+        android:layout_alignTop="@id/circleImage"
+        android:layout_alignStart="@id/circleImage"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="0dp"
+        android:textSize="16sp"
+        android:textColor="#fff"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@id/circleImage"
+        android:layout_marginStart="50dp"
+        />
+
+</RelativeLayout>

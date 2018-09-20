@@ -1,5 +1,6 @@
 package com.kh618.entmaa.Activitys;
 
+import android.os.Build;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +9,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
-import com.kh618.entmaa.Adabter.WhoUsAdapter;
+import com.kh618.entmaa.Adapter.WhoUsAdapter;
 import com.kh618.entmaa.MyClasses.MyNavigation;
 import com.kh618.entmaa.MyClasses.WhoUsItem;
 import com.kh618.entmaa.R;
@@ -27,6 +30,10 @@ public class WhoUs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_who_us);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
 
         ImageView backRow = findViewById(R.id.backrow);
 

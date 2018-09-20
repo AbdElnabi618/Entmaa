@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Activitys.SplashScreen"
     android:background="@mipmap/splash2"
-    >
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:layout_width="250dp"
@@ -36,7 +36,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="-32dp"
         android:text="@string/loading"
-        android:textColor="@color/colorAccent"
-        android:textSize="16sp" />
+        android:textSize="16sp"        />
 
 </RelativeLayout>

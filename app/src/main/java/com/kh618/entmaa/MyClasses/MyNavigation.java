@@ -12,7 +12,10 @@ import android.view.View;
 import com.kh618.entmaa.Activitys.BankAccounts;
 import com.kh618.entmaa.Activitys.ContectUs;
 import com.kh618.entmaa.Activitys.Home;
+import com.kh618.entmaa.Activitys.Login;
+import com.kh618.entmaa.Activitys.Notifications;
 import com.kh618.entmaa.Activitys.Packages;
+import com.kh618.entmaa.Activitys.TheQuestions;
 import com.kh618.entmaa.R;
 import com.kh618.entmaa.Activitys.WhoUs;
 import com.kh618.entmaa.Activitys.Setting;
@@ -50,25 +53,25 @@ public class MyNavigation {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                openFreg(item.getItemId());
+                OpenFreg(item.getItemId());
                 drawerLayout.closeDrawers();
                 mStatus=false;
                 return false;
             }
         });
     }
-    public void openFreg(int id) {
+    public void OpenFreg(int id) {
 
         if (id == R.id.home_item) {
         OpenActivity(Home.class);
         } else if (id == R.id.askMember_item) {
-
+            OpenActivity(TheQuestions.class);
         } else if (id == R.id.contact_item) {
             OpenActivity(ContectUs.class);
         } else if (id == R.id.logout_item) {
-
+                OpenActivity(Login.class);
         } else if (id == R.id.notification_item) {
-
+            OpenActivity(Notifications.class);
         } else if (id == R.id.packages_item) {
             OpenActivity(Packages.class);
         } else if (id == R.id.setting_item) {
