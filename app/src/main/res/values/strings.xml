@@ -94,4 +94,8 @@
     <string name="userName_notifi">By Admin</string>
     <string name="notification_content">you must registering in the application</string>
 
+    <!--SharedPreferences-->
+    <string name="status_key">login status</string>
+    <string name="login_key">login key</string>
+
 </resources>

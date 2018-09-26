@@ -1,7 +1,9 @@
 package com.kh618.entmaa.MyClasses;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -25,12 +27,14 @@ public class MyNavigation {
    private DrawerLayout drawerLayout;
    private boolean mStatus;
    private NavigationView navigationView;
+   private SharedPreferences sharedPreferences;
 
     public MyNavigation(Activity activity, DrawerLayout drawerLayout, NavigationView navigationView) {
         this.activity = activity;
         this.drawerLayout = drawerLayout;
         this.navigationView = navigationView;
         mStatus = false;
+        sharedPreferences=activity.getSharedPreferences(activity.getString(R.string.status_key), Context.MODE_PRIVATE);
         CreateDrawer();
     }
 
@@ -69,6 +73,7 @@ public class MyNavigation {
         } else if (id == R.id.contact_item) {
             OpenActivity(ContectUs.class);
         } else if (id == R.id.logout_item) {
+            sharedPreferences.edit().putString(activity.getString(R.string.login_key),"false").apply();
                 OpenActivity(Login.class);
         } else if (id == R.id.notification_item) {
             OpenActivity(Notifications.class);
@@ -85,6 +90,7 @@ public class MyNavigation {
     public void OpenActivity(Class c){
         if(activity.getClass() != c) {
             Intent i = new Intent(activity, c);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             activity.startActivity(i);
         }
     }
