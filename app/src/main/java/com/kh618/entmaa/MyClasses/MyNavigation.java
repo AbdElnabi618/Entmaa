@@ -22,19 +22,24 @@ import com.kh618.entmaa.R;
 import com.kh618.entmaa.Activitys.WhoUs;
 import com.kh618.entmaa.Activitys.Setting;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class MyNavigation {
    private Activity activity;
    private DrawerLayout drawerLayout;
    private boolean mStatus;
    private NavigationView navigationView;
    private SharedPreferences sharedPreferences;
+    private SharedPreferences sharedUserInformation;
 
     public MyNavigation(Activity activity, DrawerLayout drawerLayout, NavigationView navigationView) {
         this.activity = activity;
         this.drawerLayout = drawerLayout;
         this.navigationView = navigationView;
         mStatus = false;
-        sharedPreferences=activity.getSharedPreferences(activity.getString(R.string.status_key), Context.MODE_PRIVATE);
+        sharedPreferences=activity.getSharedPreferences(activity.getString(R.string.status_key), MODE_PRIVATE);
+        sharedUserInformation  = activity.getSharedPreferences(
+                activity.getString(R.string.userInformation),MODE_PRIVATE);
         CreateDrawer();
     }
 
@@ -74,6 +79,15 @@ public class MyNavigation {
             OpenActivity(ContectUs.class);
         } else if (id == R.id.logout_item) {
             sharedPreferences.edit().putString(activity.getString(R.string.login_key),"false").apply();
+            SharedPreferences.Editor informationEditor = sharedUserInformation.edit();
+
+            informationEditor.putString(activity.getString(R.string.user_name_key),"");
+            informationEditor.putString(activity.getString(R.string.userId_key),"");
+            informationEditor.putString(activity.getString(R.string.email_key),"");
+            informationEditor.putString(activity.getString(R.string.phone_key),"");
+            informationEditor.putString(activity.getString(R.string.company_name_key),"");
+            informationEditor.putString(activity.getString(R.string.naked_name_key),"");
+            informationEditor.apply();
                 OpenActivity(Login.class);
         } else if (id == R.id.notification_item) {
             OpenActivity(Notifications.class);

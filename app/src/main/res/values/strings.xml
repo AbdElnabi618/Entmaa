@@ -97,5 +97,13 @@
     <!--SharedPreferences-->
     <string name="status_key">login status</string>
     <string name="login_key">login key</string>
+    <!--SharedPreferences user information-->
+    <string name="userInformation">user information</string>
+    <string name="user_name_key">user name</string>
+    <string name="naked_name_key">naked name</string>
+    <string name="company_name_key">company name</string>
+    <string name="phone_key">phone number</string>
+    <string name="email_key">email</string>
+    <string name="userId_key">userId</string>
 
 </resources>

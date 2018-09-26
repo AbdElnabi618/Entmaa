@@ -16,7 +16,11 @@ import java.util.Locale;
 
 public class Test extends AppCompatActivity {
 
-
+/*
+*
+* this activity for test only
+*
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

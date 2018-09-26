@@ -38,7 +38,7 @@ public class Login extends AppCompatActivity {
         String userName , password;
         RequestQueue requestQueue;
         private  String LOGIN_URL="https://e3gaz.net/entmaa/public/api/v1/signin/en";
-       SharedPreferences sharedPreferences ;
+       SharedPreferences sharedLoginStatus, sharedUserInformation ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +59,10 @@ public class Login extends AppCompatActivity {
 
         loginProgress= findViewById(R.id.login_progress);
 
-        sharedPreferences = this.getSharedPreferences(
+        sharedLoginStatus = this.getSharedPreferences(
                 getResources().getString(R.string.status_key),MODE_PRIVATE);
+        sharedUserInformation  = this.getSharedPreferences(
+                getResources().getString(R.string.userInformation),MODE_PRIVATE);
 
          requestQueue = Volley.newRequestQueue(this);
     }
@@ -82,22 +84,47 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 try {
-                    JSONObject j = new JSONObject(response);
-                    if (j.getString("value").equals("true")){
+                    JSONObject responseObject = new JSONObject(response);
+                    if (responseObject.getString("value").equals("true")){
 
-                        SharedPreferences.Editor editor= sharedPreferences.edit();
-                        editor.putString(getString(R.string.login_key),"true");
-                        editor.apply();
+                        JSONObject dataObject = responseObject.getJSONObject("data");
+
+                        SharedPreferences.Editor informationEditor = sharedUserInformation.edit();
+
+                        informationEditor.putString(getString(R.string.user_name_key),dataObject.getString("username"));
+                        informationEditor.putString(getString(R.string.userId_key),dataObject.getString("id"));
+                        informationEditor.putString(getString(R.string.email_key),dataObject.getString("email"));
+                        informationEditor.putString(getString(R.string.phone_key),dataObject.getString("mobile"));
+                        informationEditor.putString(getString(R.string.company_name_key),dataObject.getString("company_name"));
+                        informationEditor.putString(getString(R.string.naked_name_key),dataObject.getString("name"));
+                        informationEditor.apply();
+
+                        SharedPreferences.Editor loginStatusEditor= sharedLoginStatus.edit();
+
+                        loginStatusEditor.putString(getString(R.string.login_key),"true");
+                        loginStatusEditor.apply();
+
+                        et_userName.setText("");
+                        et_password.setText("");
 
                         Intent i =new Intent(Login.this,Home.class);
                         loginProgress.setVisibility(View.INVISIBLE);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(i);
                     }else{
                         loginProgress.setVisibility(View.INVISIBLE);
-                        Toast.makeText(Login.this, j.getString("msg"), Toast.LENGTH_SHORT).show();
+
+                        et_userName.setText("");
+                        et_password.setText("");
+
+                        Toast.makeText(Login.this, responseObject.getString("msg"), Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (JSONException e) {
+
+                    et_userName.setText("");
+                    et_password.setText("");
+
                     loginProgress.setVisibility(View.INVISIBLE);
                     e.printStackTrace();
                 }
@@ -117,6 +144,7 @@ public class Login extends AppCompatActivity {
             }
         };
         requestQueue.add(stringRequest);
+
 
     }
 

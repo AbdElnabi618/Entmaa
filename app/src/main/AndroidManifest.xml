@@ -20,7 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activitys.Login" />
-        <activity android:name=".Activitys.Register" />
+        <activity android:name=".Activitys.Register"
+            tools:ignore="ExtraText">
+            android:windowSoftInputMode="stateVisible|adjustResize"
+        </activity>
         <activity android:name=".Activitys.Home" />
         <activity android:name=".RestaurantClasses.Restaurants" />
         <activity android:name=".Activitys.Test" />
