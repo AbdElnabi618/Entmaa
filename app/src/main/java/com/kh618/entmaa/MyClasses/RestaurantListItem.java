@@ -1,17 +1,14 @@
 package com.kh618.entmaa.MyClasses;
 
+import java.util.ArrayList;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
 
-public class ListItem {
+public class RestaurantListItem {
 
     @SerializedName("value")
     @Expose
     private Boolean value;
-    @SerializedName("count")
-    @Expose
-    private Integer count;
     @SerializedName("data")
     @Expose
     private ArrayList<Item> data = null;
@@ -24,14 +21,6 @@ public class ListItem {
         this.value = value;
     }
 
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
     public ArrayList<Item> getData() {
         return data;
     }
@@ -39,6 +28,7 @@ public class ListItem {
     public void setData(ArrayList<Item> data) {
         this.data = data;
     }
+
     public class Item {
 
         @SerializedName("id")
@@ -50,6 +40,9 @@ public class ListItem {
         @SerializedName("name")
         @Expose
         private String name;
+        @SerializedName("offer")
+        @Expose
+        private String offer;
 
         public Integer getId() {
             return id;
@@ -75,6 +68,13 @@ public class ListItem {
             this.name = name;
         }
 
-    }
+        public String getOffer() {
+            return offer;
+        }
 
+        public void setOffer(String offer) {
+            this.offer = offer;
+        }
+
+    }
 }

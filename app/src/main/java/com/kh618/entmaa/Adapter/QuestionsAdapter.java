@@ -14,12 +14,14 @@ import com.kh618.entmaa.R;
 
 import java.util.ArrayList;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.QuizHolder>{
 
     Context context;
-    ArrayList<QuizeItem> list ;
+    ArrayList<QuizeItem.Item> list ;
 
-    public QuestionsAdapter(Context context, ArrayList<QuizeItem> list) {
+    public QuestionsAdapter(Context context, ArrayList<QuizeItem.Item> list) {
         this.context = context;
         this.list = list;
     }
@@ -32,13 +34,15 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Quiz
 
     @Override
     public void onBindViewHolder(final QuizHolder holder, int position) {
-        QuizeItem item = list.get(position);
-        holder.quiz.setText(item.getQueiz());
-        holder.quiz.setOnClickListener(new View.OnClickListener() {
+        final QuizeItem.Item item = list.get(position);
+        holder.quiz.setText(item.getPost());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(context,Replies.class);
-                i.putExtra("question",holder.quiz.getText());
+                i.setFlags(FLAG_ACTIVITY_NEW_TASK );
+                i.putExtra("id",item.getId());
+                i.putExtra("question",item.getPost());
                 context.startActivity(i);
             }
         });

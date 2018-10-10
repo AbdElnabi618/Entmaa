@@ -15,14 +15,22 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kh618.entmaa.Adapter.QuestionsAdapter;
+import com.kh618.entmaa.Interfaces.Api;
 import com.kh618.entmaa.MyClasses.MyNavigation;
 import com.kh618.entmaa.MyClasses.QuizeItem;
 import com.kh618.entmaa.R;
 
 import java.util.ArrayList;
 import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TheQuestions extends AppCompatActivity {
 
@@ -33,7 +41,10 @@ public class TheQuestions extends AppCompatActivity {
 
     RecyclerView recyclerView;
     QuestionsAdapter adapter;
-    ArrayList<QuizeItem> list ;
+
+    Retrofit retrofit;
+    Api api;
+    String local ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +63,15 @@ public class TheQuestions extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        list=new ArrayList<>();
 
-        for (int i=0 ;i<30;i++)
-            list.add(new QuizeItem(getResources().getString(R.string.quite1)));
+        retrofit = new Retrofit.Builder().baseUrl(Api.BaseUrlLink).
+                addConverterFactory(GsonConverterFactory.create())
+                .build();
 
-        String local = Locale.getDefault().toString();
+        api= retrofit.create(Api.class);
+
+
+         local = Locale.getDefault().toString();
         if(local.equals("ar_EG") || local.equals("ar"))
             backRow.setImageResource(R.mipmap.arrow);
 
@@ -67,15 +81,40 @@ public class TheQuestions extends AppCompatActivity {
 
 
         recyclerView= findViewById(R.id.questionRecycle);
-        adapter=new QuestionsAdapter(this,list);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
 
 
+        getAllQuestions();
+    }
+
+    public void getAllQuestions(){
+        Call<QuizeItem> call ;
+        if(local.equals("ar_EG") || local.equals("ar"))
+            call=api.getPostsAr();
+        else
+            call=api.getPostsEn();
+
+        call.enqueue(new Callback<QuizeItem>() {
+            @Override
+            public void onResponse(Call<QuizeItem> call, Response<QuizeItem> response) {
+                QuizeItem quizeItem= response.body();
+                if(quizeItem!= null && quizeItem.getValue()){
+                    adapter = new QuestionsAdapter(getApplicationContext(),quizeItem.getData());
+                    recyclerView.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<QuizeItem> call, Throwable t) {
+                Toast.makeText(TheQuestions.this, "error 13 :"+t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
+
     public void openDrawer(View v) {
         drawerLayout.openDrawer(Gravity.START,true);
     }

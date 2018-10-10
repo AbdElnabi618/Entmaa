@@ -4,6 +4,8 @@
     package="com.kh618.entmaa">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -43,6 +45,7 @@
             android:windowSoftInputMode="stateVisible|adjustResize"
         </activity>
         <activity android:name=".Activitys.Notifications"></activity>
+        <activity android:name=".Activitys.BarCodeScanner"></activity>
     </application>
 
 </manifest>

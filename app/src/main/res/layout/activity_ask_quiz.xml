@@ -10,7 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/transparent">
+        android:background="@android:color/transparent"
+        android:layout_marginTop="22dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -58,10 +59,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="100dp"
             android:background="#8396b1"
             android:layout_below="@id/ask_image"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="90dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:id="@+id/layout_editText"
@@ -69,9 +70,10 @@
             <EditText
                 android:id="@+id/add_quiz"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:hint="@string/addQuiz"
                 android:textColorHint="#fff"
+                android:gravity="top|start"
                 android:textColor="#fff"
                 android:background="@android:color/transparent"/>
         </LinearLayout>
@@ -81,12 +83,13 @@
             android:layout_height="wrap_content"
             android:background="#fff"
             android:layout_below="@+id/layout_editText"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="90dp"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:text="@string/send"
             android:textColor="#000"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:onClick="SubmitQuestion"/>
 
     </RelativeLayout>
 

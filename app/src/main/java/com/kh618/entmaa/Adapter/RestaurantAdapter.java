@@ -13,15 +13,18 @@ import android.widget.Toast;
 
 import com.kh618.entmaa.R;
 import com.kh618.entmaa.RestaurantClasses.RestaurantDeitales;
-import com.kh618.entmaa.RestaurantClasses.RestaurantListItem;
+import com.kh618.entmaa.MyClasses.RestaurantListItem;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Holder> {
     private Context context;
-    private ArrayList<RestaurantListItem> listItems ;
+    private ArrayList<RestaurantListItem.Item> listItems ;
 
-    public RestaurantAdapter(Context context, ArrayList<RestaurantListItem> listItems) {
+    public RestaurantAdapter(Context context, ArrayList<RestaurantListItem.Item> listItems) {
         this.context = context;
         this.listItems = listItems;
     }
@@ -33,19 +36,21 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Ho
 
         return new Holder(v);
     }
-    Holder hh;
+
     @Override
     public void onBindViewHolder(Holder holder, int position) {
-        RestaurantListItem list = listItems.get(position);
+        final RestaurantListItem.Item list = listItems.get(position);
         try{
-            hh= holder;
-            holder.image.setImageResource(list.getImageId());
-            holder.title.setText(list.getTitle());
+
+            Picasso.with(context).load(list.getImage()).into(holder.image);
+            holder.title.setText(list.getName());
             holder.offer.setText(list.getOffer());
-            holder.parent.setOnClickListener(new View.OnClickListener() {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent i = new Intent(context, RestaurantDeitales.class);
+                    i.putExtra("id",list.getId());
+                    i.addFlags(FLAG_ACTIVITY_NEW_TASK );
                     context.startActivity(i);
                 }
             });

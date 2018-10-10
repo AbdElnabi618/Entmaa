@@ -1,7 +1,10 @@
 package com.kh618.entmaa.Activitys;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +27,8 @@ import com.kh618.entmaa.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -76,6 +81,7 @@ public class Register extends AppCompatActivity {
 
     }
     public void register(View v){
+        if(isConnectToInterner()) {
         registerProgress.setVisibility(View.VISIBLE);
         StringRequest stringRequest= new StringRequest(Request.Method.POST, REGISTER_URL,
                 new Response.Listener<String>() {
@@ -139,9 +145,35 @@ public class Register extends AppCompatActivity {
             }
         };
         requestQueue.add(stringRequest);
+    }else{
+        Toast.makeText(this, "please check your internet connection", Toast.LENGTH_SHORT).show();
+    }
     }
 
     public void finish(View view) {
         finish();
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+    public  boolean isConnectToInterner() {
+        if (isNetworkAvailable()) {
+            try {
+                HttpURLConnection urlc = (HttpURLConnection) (new URL("http://www.google.com").openConnection());
+                urlc.setRequestProperty("User-Agent", "Test");
+                urlc.setRequestProperty("Connection", "close");
+                urlc.setConnectTimeout(1500);
+                urlc.connect();
+                return (urlc.getResponseCode() == 200);
+            } catch (Exception e) {
+                Log.e("internet error1", "Error: ", e);
+            }
+        } else {
+            Log.d("internet error2", "No network present");
+        }
+        return false;
     }
 }

@@ -50,6 +50,7 @@
         that it has a more-or-less normal distribution of letters, as opposed to using
         \'Content here, content here\', making it look like readable English.  </string>
     <string name="offerHereNow">Now offer</string>
+    <string name="noOffer">no offer</string>
     <string name="offerDate">from 3/9/2018 to 4/9/2018</string>
 
     <string name="terms">Terms and Conditions</string>
@@ -95,15 +96,17 @@
     <string name="notification_content">you must registering in the application</string>
 
     <!--SharedPreferences-->
-    <string name="status_key">login status</string>
-    <string name="login_key">login key</string>
+    <string name="status_key" translatable="false" >login status</string>
+    <string name="login_key" translatable="false">login key</string>
     <!--SharedPreferences user information-->
-    <string name="userInformation">user information</string>
-    <string name="user_name_key">user name</string>
-    <string name="naked_name_key">naked name</string>
-    <string name="company_name_key">company name</string>
-    <string name="phone_key">phone number</string>
-    <string name="email_key">email</string>
-    <string name="userId_key">userId</string>
+    <string name="userInformation" translatable="false">user information</string>
+    <string name="user_name_key" translatable="false">user name</string>
+    <string name="naked_name_key" translatable="false">naked name</string>
+    <string name="company_name_key" translatable="false">company name</string>
+    <string name="phone_key" translatable="false">phone number</string>
+    <string name="email_key" translatable="false">email</string>
+    <string name="userId_key" translatable="false">userId</string>
+    <string name="shopData" translatable="false">shopData</string>
+    <string name="shopId" translatable="false">shopId</string>
 
 </resources>

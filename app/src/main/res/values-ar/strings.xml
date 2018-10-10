@@ -44,12 +44,14 @@
     <string name="mrFish">مطعم مستر فيش</string>
 
     <string name="restaurantDetails">تفاصيل المطعم</string>
+    <string name="offer">عروض حتي 50%</string>
     <string name="autoText">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى هذا النص
         هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى
         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى </string>
 
     <string name="offerHereNow">العروض المتاحه حاليا</string>
     <string name="offerDate">من 3/9/2018 الي 4/9/2018</string>
+    <string name="noOffer">لا يوجد عروض</string>
 
     <string name="terms">الشروط والاحكام</string>
 

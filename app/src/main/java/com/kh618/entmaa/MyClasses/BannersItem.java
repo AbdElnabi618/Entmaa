@@ -1,20 +1,21 @@
+
 package com.kh618.entmaa.MyClasses;
 
+import java.util.ArrayList;
+import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-public class ListItem {
+public class BannersItem {
 
     @SerializedName("value")
     @Expose
     private Boolean value;
-    @SerializedName("count")
-    @Expose
-    private Integer count;
     @SerializedName("data")
     @Expose
-    private ArrayList<Item> data = null;
+    private ArrayList<Items> data = null;
 
     public Boolean getValue() {
         return value;
@@ -24,32 +25,29 @@ public class ListItem {
         this.value = value;
     }
 
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-    public ArrayList<Item> getData() {
+    public ArrayList<Items> getData() {
         return data;
     }
 
-    public void setData(ArrayList<Item> data) {
+    public void setData(ArrayList<Items> data) {
         this.data = data;
     }
-    public class Item {
+
+
+    public class Items {
 
         @SerializedName("id")
         @Expose
         private Integer id;
+        @SerializedName("link")
+        @Expose
+        private String link;
         @SerializedName("image")
         @Expose
         private String image;
-        @SerializedName("name")
+        @SerializedName("text")
         @Expose
-        private String name;
+        private String text;
 
         public Integer getId() {
             return id;
@@ -57,6 +55,14 @@ public class ListItem {
 
         public void setId(Integer id) {
             this.id = id;
+        }
+
+        public String getLink() {
+            return link;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
         }
 
         public String getImage() {
@@ -67,14 +73,17 @@ public class ListItem {
             this.image = image;
         }
 
-        public String getName() {
-            return name;
+        public String getText() {
+            return text;
         }
 
-        public void setName(String name) {
-            this.name = name;
+        public void setText(String text) {
+            this.text = text;
         }
 
     }
 
 }
+
+
+

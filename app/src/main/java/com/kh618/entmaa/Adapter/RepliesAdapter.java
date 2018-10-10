@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class RepliesAdapter extends RecyclerView.Adapter<RepliesAdapter.RepliesHolder>{
 
     Context context;
-    ArrayList<RepliedItem> list ;
+    ArrayList<RepliedItem.Item> list ;
 
-    public RepliesAdapter(Context context, ArrayList<RepliedItem> list) {
+    public RepliesAdapter(Context context, ArrayList<RepliedItem.Item> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,8 +31,8 @@ public class RepliesAdapter extends RecyclerView.Adapter<RepliesAdapter.RepliesH
 
     @Override
     public void onBindViewHolder(RepliesHolder holder, int position) {
-        RepliedItem item = list.get(position);
-        holder.replied.setText(item.getReplie());
+        RepliedItem.Item item = list.get(position);
+        holder.replied.setText(item.getAnswer());
         if(position==0){
             holder.line1.setVisibility(View.INVISIBLE);
         }else if(position== list.size() -1){

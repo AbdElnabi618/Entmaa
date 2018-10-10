@@ -1,8 +1,11 @@
 package com.kh618.entmaa.Activitys;
 
 import android.app.VoiceInteractor;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +30,9 @@ import com.kh618.entmaa.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -76,76 +82,87 @@ public class Login extends AppCompatActivity {
     }
 
     public void Login(View view) {
-        userName= et_userName.getText().toString();
-        password = et_password.getText().toString();
+        if(isNetworkAvailable()) {
+            userName = et_userName.getText().toString();
+            password = et_password.getText().toString();
+            loginProgress.setVisibility(View.VISIBLE);
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    try {
+                        JSONObject responseObject = new JSONObject(response);
+                        Toast.makeText(Login.this, "connecting...", Toast.LENGTH_SHORT).show();
+                        if (responseObject.getString("value").equals("true")) {
+                            Toast.makeText(Login.this, "user found", Toast.LENGTH_SHORT).show();
+                            JSONObject dataObject = responseObject.getJSONObject("data");
 
-        loginProgress.setVisibility(View.VISIBLE);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject responseObject = new JSONObject(response);
-                    if (responseObject.getString("value").equals("true")){
+                            SharedPreferences.Editor informationEditor = sharedUserInformation.edit();
 
-                        JSONObject dataObject = responseObject.getJSONObject("data");
+                            informationEditor.putString(getString(R.string.user_name_key), dataObject.getString("username"));
+                            informationEditor.putString(getString(R.string.userId_key), dataObject.getString("id"));
+                            informationEditor.putString(getString(R.string.email_key), dataObject.getString("email"));
+                            informationEditor.putString(getString(R.string.phone_key), dataObject.getString("mobile"));
+                            informationEditor.putString(getString(R.string.company_name_key), dataObject.getString("company_name"));
+                            informationEditor.putString(getString(R.string.naked_name_key), dataObject.getString("name"));
+                            informationEditor.apply();
 
-                        SharedPreferences.Editor informationEditor = sharedUserInformation.edit();
+                            SharedPreferences.Editor loginStatusEditor = sharedLoginStatus.edit();
 
-                        informationEditor.putString(getString(R.string.user_name_key),dataObject.getString("username"));
-                        informationEditor.putString(getString(R.string.userId_key),dataObject.getString("id"));
-                        informationEditor.putString(getString(R.string.email_key),dataObject.getString("email"));
-                        informationEditor.putString(getString(R.string.phone_key),dataObject.getString("mobile"));
-                        informationEditor.putString(getString(R.string.company_name_key),dataObject.getString("company_name"));
-                        informationEditor.putString(getString(R.string.naked_name_key),dataObject.getString("name"));
-                        informationEditor.apply();
+                            loginStatusEditor.putString(getString(R.string.login_key), "true");
+                            loginStatusEditor.apply();
 
-                        SharedPreferences.Editor loginStatusEditor= sharedLoginStatus.edit();
+                            et_userName.setText("");
+                            et_password.setText("");
 
-                        loginStatusEditor.putString(getString(R.string.login_key),"true");
-                        loginStatusEditor.apply();
+                            Intent i = new Intent(Login.this, Home.class);
+                            loginProgress.setVisibility(View.INVISIBLE);
+                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(i);
+                        } else {
+                            loginProgress.setVisibility(View.INVISIBLE);
+
+                            et_userName.setText("");
+                            et_password.setText("");
+
+                            Toast.makeText(Login.this, responseObject.getString("msg"), Toast.LENGTH_SHORT).show();
+                        }
+
+                    } catch (JSONException e) {
 
                         et_userName.setText("");
                         et_password.setText("");
 
-                        Intent i =new Intent(Login.this,Home.class);
                         loginProgress.setVisibility(View.INVISIBLE);
-                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(i);
-                    }else{
-                        loginProgress.setVisibility(View.INVISIBLE);
-
-                        et_userName.setText("");
-                        et_password.setText("");
-
-                        Toast.makeText(Login.this, responseObject.getString("msg"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-
-                } catch (JSONException e) {
-
-                    et_userName.setText("");
-                    et_password.setText("");
-
-                    loginProgress.setVisibility(View.INVISIBLE);
-                    e.printStackTrace();
                 }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("login",error.toString());
-            }
-        }){
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String,String> par = new HashMap<>();
-                par.put("username",userName);
-                par.put("password",password);
-                return par;
-            }
-        };
-        requestQueue.add(stringRequest);
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    loginProgress.setVisibility(View.INVISIBLE);
+                    Toast.makeText(Login.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }) {
+                @Override
+                protected Map<String, String> getParams() {
+                    Map<String, String> par = new HashMap<>();
+                    par.put("username", userName);
+                    par.put("password", password);
+                    return par;
+                }
+            };
+            requestQueue.add(stringRequest);
+        }else{
+            Toast.makeText(this, "please check your internet connection", Toast.LENGTH_SHORT).show();
+        }
 
 
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 }

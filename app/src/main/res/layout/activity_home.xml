@@ -23,6 +23,14 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent">
 
+                    <ProgressBar
+                        android:id="@+id/loading_banner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="invisible"
+                        />
+
                     <com.daimajia.slider.library.SliderLayout
                         android:id="@+id/slider"
                         android:layout_width="match_parent"
@@ -35,7 +43,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_marginStart="22dp"
-                        android:layout_marginTop="22dp"
+                        android:layout_marginTop="44dp"
                         android:onClick="openDrawer"
                         android:src="@mipmap/menue" />
 
@@ -45,7 +53,7 @@
                         android:layout_alignStart="@+id/drawer_icon"
                         android:background="@drawable/edit_text"
                         android:orientation="horizontal"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="32dp"
                         android:layout_marginStart="64dp"
                         android:layout_marginEnd="16dp"
                         android:elevation="8dp">
